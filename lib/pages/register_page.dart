@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../components/my_button.dart';
 
 class RegisterPage extends StatefulWidget{
@@ -92,12 +91,11 @@ class _RegisterPageState extends State<RegisterPage>{
               const SizedBox(width: 4,),
               GestureDetector(
                 onTap: widget.onTap,
-                child: Text,
                 child: Text(
-                  "Login now"
+                  "Login now",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary
-                    FontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                    fontWeight: FontWeight.bold,
                   ),
                   ),
                   ),
