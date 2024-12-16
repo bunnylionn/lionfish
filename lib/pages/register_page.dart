@@ -1,20 +1,21 @@
-import 'package:eatbytes/components/my_button.dart';
 import 'package:flutter/material.dart';
-import 'package:eatbytes/components/my_textfield.dart';
 
-class LoginPage extends StatefulWidget{
+import '../components/my_button.dart';
+
+class RegisterPage extends StatefulWidget{
   final void Function()? onTap;
 
-  LoginPage({super.key, required this.onTap})
+  const RegisterPage({super.key, required this.onTap,});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  //ttttttext editing
-  final TextEditingController emailcontroller = TextEditingController();
-  final TextEditingController passwordController TextEditingController();
+class _RegisterPageState extends State<RegisterPage>{
+  //text editing controller
+    final TextEditingController emailcontroller = TextEditingController();
+    final TextEditingController passwordController= TextEditingController();
+    final TextEditingController confirmpasswordController= TextEditingController();
 
  @override
   Widget build(BuildContext context) {
@@ -25,23 +26,23 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment:MainAxisAlignment.center,
           children: [
           //logo
-          Icon(
-            Icon.lock_open_rounded,
-            size: 100,
-            color: Theme.of(context).colorScheme.inversePrimary,
+          Icon(Icon.lock_open_rounded,
+          size: 100,
+          color: Theme.of(context).colorScheme.inversePrimary,
           ),
+
+          const SizedBox(height: 25),
+
+          Text(
+            "Let's create an account for you",
+            style: TextStyle(fontSize: 16,
+            color: Theme.of(context).colorScheme.inversePrimary,
+            ),//TextStyle
+          ),//Text
 
           const SizedBox(height: 25),
 
           //message, app slogan
-          Text(
-            "Food Delivery App",
-            style: TextStyle(fontSize: 16,
-            color: Theme.of(context).colorScheme.inversePrimary,
-            ),
-          ),
-
-          const SizedBox(height: 25),
 
           // email textfield 
           MyTextField(
@@ -50,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: false,
           ),
 
-          const SizedBox(height: 10),
+          const SizedBox(height: 10)
 
           // password 
           MyTextField(
@@ -59,34 +60,44 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: false,
           ),
 
-          const SizedBox(height: 25),
+          const SizedBox(height: 10)
 
-          //sign in button
+          // comfirm password 
+          MyTextField(
+            controller: confirmpasswordController,
+            hintText: "Confirm Password",
+            obscureText: false,
+          ),
+
+          const SizedBox(height: 10),
+
+          //sign Up button
           MyButton(
-            text: "Sign In",
+            text: "Sign Un",
             onTap: () {},
             ),
 
             const SizedBox(height: 25),
 
-          //not a member?
+          //already have account? login here
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Not a member?",
+                "already have account?",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.inversePrimary),
               ),
               const SizedBox(width: 4,),
               GestureDetector(
                 onTap: widget.onTap,
+                child: Text,
                 child: Text(
-                  "Register now",
+                  "Login now"
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.inversePrimary
+                    FontWeight: FontWeight.bold,
                   ),
                   ),
                   ),
