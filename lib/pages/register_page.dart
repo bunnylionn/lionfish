@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/my_button.dart';
+import '../components/my_textfield.dart';
 
 class RegisterPage extends StatefulWidget{
   final void Function()? onTap;
@@ -25,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage>{
           mainAxisAlignment:MainAxisAlignment.center,
           children: [
           //logo
-          Icon(Icon.lock_open_rounded,
+          Icon(Icons.lock_open_rounded,
           size: 100,
           color: Theme.of(context).colorScheme.inversePrimary,
           ),
@@ -50,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage>{
             obscureText: false,
           ),
 
-          const SizedBox(height: 10)
+          const SizedBox(height: 10),
 
           // password 
           MyTextField(
@@ -59,7 +60,7 @@ class _RegisterPageState extends State<RegisterPage>{
             obscureText: false,
           ),
 
-          const SizedBox(height: 10)
+          const SizedBox(height: 10),
 
           // comfirm password 
           MyTextField(

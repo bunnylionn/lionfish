@@ -1,5 +1,5 @@
 import 'package:eatbytes/themes/dark_mode.dart';
-import 'package:eatbytes/themes/ligh_mode.dart';
+import 'package:eatbytes/themes/light_mode.dart';
 import 'package:flutter/material.dart';
 
 class ThemeProvider with ChangeNotifier{

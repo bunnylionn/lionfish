@@ -1,6 +1,7 @@
 import 'package:eatbytes/themes/theme_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -38,7 +39,7 @@ class SettingPage extends StatelessWidget {
                   value: Provider.of<ThemeProvider>(context, listen: false)
                   .isDarkMode,
                   onChanged: (value) => Provider.of<ThemeProvider>(context, listen: false)
-                  .ToggleTheme(),
+                  .toggleTheme(),
                  ),
               ],
             ),

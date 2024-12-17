@@ -16,7 +16,7 @@ class MyDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 100.0),
             child: Icon(
-              Icon.lock_open_rounded,
+              Icons.lock_open_rounded,
             size: 80,color: Theme.of(context).colorScheme.inversePrimary,
             ),
           ),
@@ -32,13 +32,13 @@ class MyDrawer extends StatelessWidget {
 
           MyDrawerTile(
             text:"H O M E",
-            icon: Icon.home,
+            icon: Icons.home,
             onTap: () => Navigator.pop(context),
           ),
           //setting 
           MyDrawerTile(
             text:"S E T T I I N G",
-            icon: Icon.setting,
+            icon: Icons.settings,
             onTap: (){
               Navigator.pop(context);
               Navigator.push(
@@ -56,7 +56,7 @@ class MyDrawer extends StatelessWidget {
           //logout
           MyDrawerTile(
             text:"L O G O U T",
-            icon: Icon.logout,
+            icon: Icons.logout,
             onTap: (){},
           ),
 
