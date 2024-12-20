@@ -1,3 +1,4 @@
+import 'package:eatbytes/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelive/models/food.dart'; // kena tgk based on amalin punya 
 
@@ -22,6 +23,24 @@ class FoodPage extends StatefulWidget{
 }
 
 class _FoodPageState extends State<FoodPage> {
+
+  //method to add to cart
+  void addToCart(Food food, Map<Addon, bool> selectedAddons) {
+
+    // close the current food page to go back to menu
+    Navigator.pop(context);
+
+    List<Addon> currentlySelectedAddons = [];
+    for (Addon addon in wedget.food.availableAddons){
+      if (widget.selectedAddons[addon] == true){
+        currentlySelectedAddons.add(addon);
+      }
+    }
+
+    context.read<Restaurant>().addToCart(food, currentlySelectedAddons);
+  }
+
+
   @override
   Widget build(BuildContext context){
     return Stack(children: [
@@ -121,7 +140,7 @@ class _FoodPageState extends State<FoodPage> {
         
                 //button -> add to cart
                 MyButton(
-                  onTap: () {}, 
+                  onTap: () => addToCart(widget.food, widget.selectedAddons), 
                   text: "Add to Cart",
                 ), // MyButton
 
