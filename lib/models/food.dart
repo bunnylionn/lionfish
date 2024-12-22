@@ -15,7 +15,7 @@ class Food {
     required this.description,
     required this.imagePath,
     required this.price,
-    required category,
+    required this.category,
   });
 }
 
