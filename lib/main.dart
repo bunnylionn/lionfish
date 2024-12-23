@@ -1,14 +1,24 @@
-import 'package:eatbytes/auth/login_or_register.dart';
 import 'package:flutter/material.dart';
+import 'pa'
 import 'package:provider/provider.dart';
-// import 'themes/theme_provider.dart';
+import 'themes/theme_provider.dart';
 import 'package:eatbytes/themes/theme_provider.dart';
 
+import 'models/restaurant.dart';
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
-    ChangeNotifierProvider(
-    create: (context) => ThemeProvider(),
-    child: const MyApp(),
+    MultiProvider(
+      providers:[
+      //theme provider 
+      ChangeNotifierProvider( create : (context)=>ThemeProvider()),
+
+      //restaurant provider
+      ChangeNotifierProvider( create : (context)=>Restaurant()),
+      ],
+      child: const MyApp(),
     ),
   );
 }
@@ -22,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner : false,
       home: const LoginOrRegister(),
-      theme: Provider.of<ThemeProvider>(context).themedata,        // This is the theme of your application.
+      theme: Provider.of<ThemeProvider>(context).themeData,        // This is the theme of your application.
       );
   }
 }

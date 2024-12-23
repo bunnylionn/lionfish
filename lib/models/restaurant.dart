@@ -1,5 +1,110 @@
 import 'package:eatbytes/models/cart_item.dart';
+<<<<<<< HEAD
 import 'package:intl/intl.dart';
+=======
+import 'package:flutter/material.dart';
+import 'food.dart';
+
+class Restaurant extends ChangeNotifier {
+  //list of food menu
+  final List<Food> _menu= [
+    //lunch
+    Food( 
+      name: "Nasi Kandar", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/nasi kandar.jpg" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+    Food( 
+      name: "Nasi kerabu", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/nasi kerabu.webp" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+    Food( 
+
+      name: "Nasi Lemak", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/Nasi lemak.webp" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+
+    //dinner
+    Food( 
+      name: "Nasi Kandar", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/nasi kandar.jpg" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+    Food( 
+      name: "Nasi kerabu", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/nasi kerabu.webp" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+    Food( 
+
+      name: "Nasi Lemak", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/Nasi lemak.webp" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+
+    //snacks
+    Food( 
+      name: "Nasi Kandar", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/nasi kandar.jpg" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+    Food( 
+      name: "Nasi kerabu", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/nasi kerabu.webp" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+    Food( 
+
+      name: "Nasi Lemak", 
+      description: "A tasty nasi kandar", 
+      imagePath: "lib/images/lunch/Nasi lemak.webp" ,
+      price: '10.00' ,
+      category: FoodCategory.lunch,
+    ),
+  ];
+
+  /*
+
+    GETTERS
+
+  */
+
+  List <Food> get menu => _menu;
+
+  /*
+
+    OPERATIONS
+
+  */  
+
+  /*
+
+    HELPERS
+
+  */
+}
+
+
+
+>>>>>>> 172fec03f2c0d63212bdef3cb8fa01dbec79f5e8
 
 // JANNAH PUNYA
 
