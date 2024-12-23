@@ -1,4 +1,5 @@
 import 'package:eatbytes/models/cart_item.dart';
+import 'package:intl/intl.dart';
 
 // JANNAH PUNYA
 
@@ -31,19 +32,7 @@ void addToCart(Food food, List<Addon> selectedAddons){
   });
 
   // if item already exists, increase its quantity
-  if (cartItem != null){
-    cartItem.quantity++;
-  }
-
-  // otherwise, add a new  cart item to the cart
-  else{
-    _cart.add(
-      CartItem(
-        food: food, 
-        selectedAddons: selectedAddons
-      ),
-    );
-  }
+  cartItem.quantity++;
   notifyListeners();
 
   //remove from cart
@@ -93,5 +82,48 @@ void addToCart(Food food, List<Addon> selectedAddons){
     notifyListeners();
   }
 
+  // generate receipt
+  String displayCartReceipt() {
+    final receipt = StringBuffer();
+    receipt.writeln("Here's your receipt.");
+    receipt.writeln();
+  
+
+    // format the date to include up to seconds only
+    String formattedDate = 
+      DateFormat('yyyy-MM-dd HH:mm:ss').format(DateTime.now());
+  
+    receipt.writeln(formattedDate);
+    receipt.writeln();
+    receipt.writeln("------------");
+
+    for (final cartItem in _cart) {
+      receipt.writeln(
+         "${cartItem.quantity} x ${cartItem.food.name} - ${formatPrice(cartItem.food.price)}");
+      if (cartItem.selectedAddons.isNotEmpty) {
+        receipt
+           .writeln("   Add-ons: ${_formatAddons(cartItem.selectedAddons)}");
+      }
+      receipt.writeln();
+    }
+    receipt.writeln("------------");
+    receipt.writeln();
+    receipt.writeln("Total Items: ${getTotalItemCount()}");
+    receipt.writeln("Total Price: ${_formatPrice(getTotalPrice())}");
+
+    return receipt.toString();
+  }
+
+  // format double value into money
+  String _formatPrice(double price) {
+    return "RM${price.toStringAsFixed(2)}";
+  }
+
+  // format list of addons into a string summary
+  String _formatAddons(List<Addon> addons) {
+    return addons
+    .map((addon) => "${addon.name} (${_formatprice(addon.price)})")
+    .join(", ");
+  }
 
 }

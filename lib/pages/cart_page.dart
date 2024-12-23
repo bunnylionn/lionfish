@@ -1,6 +1,7 @@
 import 'package:eatbytes/components/my_button.dart';
 import 'package:eatbytes/components/my_cart_tile.dart';
 import 'package:eatbytes/models/cart_item.dart';
+import 'package:eatbytes/pages/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivtute/models/restaurant.dart';
 import 'package:provider/provider.dart';
@@ -62,7 +63,7 @@ class CartPage extends StatelessWidget{
                     userCart.isEmpty 
                         ? const Expanded(
                             child: Center(
-                              child: const Text("Cart is empty"),
+                              child: Text("Cart is empty"),
                             ),
                           ) 
                         : Expanded(
@@ -82,7 +83,15 @@ class CartPage extends StatelessWidget{
               ),
 
               // button to pay
-              MyButton(onTap: () {}, text: "Go to checkout"),
+              MyButton(
+                onTap: () => Navigator.push(
+                  context, 
+                  MaterialPageRoute(
+                    builder: (context) => const PaymentPage(),
+                  ), 
+                ),
+                text: "Go to checkout"
+              ),
 
               const SizedBox(height: 25),
             ],

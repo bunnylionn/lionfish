@@ -1,3 +1,5 @@
+import 'package:eatbytes/components/my_current_location.dart';
+import 'package:eatbytes/components/my_description_box.dart';
 import 'package:eatbytes/components/my_drawer.dart';
 import 'package:eatbytes/components/my_sliver_app_bar.dart';
 import 'package:eatbytes/components/my_tab_bar.dart';
@@ -45,27 +47,44 @@ class _HomePageState extends State<HomePage>
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppBar(
-            child: Text('Hello'),
-            title: MyTabBar (tabController:),
+            title: Text('title'),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Divider(
+                  indent: 25,
+                  endIndent: 25,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+
+                // my current location
+                const MyCurrentLocation(),
+
+                // description box
+                const MyDescriptionBox(),
+              ],
+            ),
           ),
         ],
-        body: TabBarView(
-          controller: _tabController
-          children: [
-            ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) => Text("FIRST TAB"),
-            ),
-            ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) => Text("SECOND TAB"),
-            ),
-            ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) => Text("THIRD TAB"),
-            ),
-          ],
-        ),
+      ),
+      
+      title: MyTabBar (tabController:),
+      body: TabBarView(
+        controller: _tabController
+        children: [
+          ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, index) => Text("FIRST TAB"),
+          ),
+          ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, index) => Text("SECOND TAB"),
+          ),
+          ListView.builder(
+            itemCount: 5,
+            itemBuilder: (context, index) => Text("THIRD TAB"),
+          ),
+        ],
       ),
     );
   }

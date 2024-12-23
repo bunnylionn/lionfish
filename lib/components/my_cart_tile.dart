@@ -1,6 +1,5 @@
 import 'package:eatbytes/components/my_quantity_selector.dart';
 import 'package:eatbytes/models/cart_item.dart';
-import 'package:eatbytes/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivtute/models/cart_item.dart';
 import 'package:provider/provider.dart';

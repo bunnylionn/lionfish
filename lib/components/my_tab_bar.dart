@@ -6,7 +6,7 @@ class MyTabBar extends StatelessWidget {
 
   const MyTabBar ({
     super.key,
-    required this.controller,
+    required this.controller, required tabController,
 
    });
   
