@@ -19,10 +19,10 @@ class  FoodTile extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.all(15.0)
+            padding: const EdgeInsets.all(15.0),
             child: Row(
               children: [
-
+            
                 //text food details
                 Expanded(
                   child: Column(
@@ -43,11 +43,11 @@ class  FoodTile extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ), 
                 ),
                 
                 const SizedBox(width: 15),
-
+            
                 //food image
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8 ),
@@ -59,7 +59,7 @@ class  FoodTile extends StatelessWidget {
         ),
 
         //divider line
-        const Divider(
+        Divider(
           color: Theme.of(context).colorScheme.tertiary,
           endIndent: 25,
           indent: 25,

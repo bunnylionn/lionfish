@@ -8,9 +8,9 @@ class MyTabBar extends StatelessWidget {
 
   const MyTabBar ({
     super.key,
-    required this.controller, required tabController,
-
+    required this.tabController,
    });
+
   List <Tab> _buildCategoryTabs(){
     return FoodCategory.values.map((category){
       return Tab(

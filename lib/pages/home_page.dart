@@ -3,6 +3,7 @@ import 'package:eatbytes/components/my_description_box.dart';
 import 'package:eatbytes/components/my_drawer.dart';
 import 'package:eatbytes/components/my_sliver_app_bar.dart';
 import 'package:eatbytes/components/my_tab_bar.dart';
+import 'package:eatbytes/pages/food_page.dart';
 import 'package:flutter/material.dart';
 import '../components/my_food_tile.dart';
 import '../models/food.dart';
@@ -35,6 +36,7 @@ class _HomePageState extends State<HomePage>
     _tabController.dispose();
     super.dispose();
   }
+  
   //sort out and return a list of food item that belong to a specific category 
   List <Food> _filterMenuByCategory(FoodCategory category, List<Food> fullMenu){
     return fullMenu.where( (food) => food.category == category).toList();
@@ -56,10 +58,15 @@ class _HomePageState extends State<HomePage>
           //get individual food
           final food = categoryMenu[index];
 
-          //return food tile 
+          //return food tile  UI
           return FoodTile(
             food: food,
-            onTap:(){},
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>FoodPage(food: food),
+              ),
+            ),
           ); 
         },
       );
@@ -77,10 +84,10 @@ class _HomePageState extends State<HomePage>
       
       //sliver
       drawer: MyDrawer(),
-      body: NestedScrollView(
+      body: NestedScrollView(     
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           MySliverAppBar(
-            title: Text('title'),
+            title: MyTabBar(tabController: ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -99,34 +106,36 @@ class _HomePageState extends State<HomePage>
             ),
           ),
         ],
-      ),
       
-      title: MyTabBar (tabController:),
-      body: TabBarView(
-        controller: _tabController
-        children: [
-          ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, index) => Text("FIRST TAB"),
-          ),
-          ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, index) => Text("SECOND TAB"),
-          ),
-          ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, index) => Text("THIRD TAB"),
-          ),
-        ],
-<<<<<<< HEAD
-=======
+        // title: MyTabBar (tabController:),
+        // body: TabBarView(
+        //   controller: _tabController
+        //   children: [
+        //     ListView.builder(
+        //       itemCount: 4,
+        //       itemBuilder: (context, index) => Text("FIRST TAB"),
+        //     ),
+        //     ListView.builder(
+        //       itemCount: 4,
+        //       itemBuilder: (context, index) => Text("SECOND TAB"),
+        //     ),
+        //     ListView.builder(
+        //       itemCount: 4,
+        //       itemBuilder: (context, index) => Text("THIRD TAB"),
+        //     ),
+        //   ],
+        
+// <<<<<<< HEAD
+// =======
 
-        body: Consumer<Restaurant> (
-          builder:(context, restaurant, child) => TabBarView(
-            controller: _tabController,
-            children: getFoodInThisCategory(restaurant.menu),
-          )
-        ),
+          body: Consumer<Restaurant> (
+            builder:(context, restaurant, child) => TabBarView(
+              controller: _tabController,
+              children: getFoodInThisCategory(restaurant.menu),
+            )
+          ),
+        // ),
+      ),
     );
   }
 } 

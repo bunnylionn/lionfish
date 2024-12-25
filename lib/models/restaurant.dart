@@ -12,6 +12,11 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/nasi kandar.jpg" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
     Food( 
       name: "Nasi kerabu", 
@@ -19,6 +24,11 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/nasi kerabu.webp" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
     Food( 
 
@@ -27,15 +37,25 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/Nasi lemak.webp" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
 
-    //dinner
+    //dinner (need to change nanti)
     Food( 
       name: "Nasi Kandar", 
       description: "A tasty nasi kandar", 
       imagePath: "lib/images/lunch/nasi kandar.jpg" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
     Food( 
       name: "Nasi kerabu", 
@@ -43,6 +63,11 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/nasi kerabu.webp" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
     Food( 
 
@@ -51,15 +76,25 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/Nasi lemak.webp" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
 
-    //snacks
+    //snacks (need to change later)
     Food( 
       name: "Nasi Kandar", 
       description: "A tasty nasi kandar", 
       imagePath: "lib/images/lunch/nasi kandar.jpg" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
     Food( 
       name: "Nasi kerabu", 
@@ -67,6 +102,11 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/nasi kerabu.webp" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
     Food( 
 
@@ -75,6 +115,11 @@ class Restaurant extends ChangeNotifier {
       imagePath: "lib/images/lunch/Nasi lemak.webp" ,
       price: '10.00' ,
       category: FoodCategory.lunch,
+      availableAddOns: [
+        Addon(name: 'Extra curry', price: 1.00),
+        Addon(name: 'Extra nasi', price: 1.00),
+        Addon(name: 'Extra chicken', price: 5.00),
+      ]
     ),
   ];
 

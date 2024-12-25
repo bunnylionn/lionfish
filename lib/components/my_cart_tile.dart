@@ -1,7 +1,8 @@
 import 'package:eatbytes/components/my_quantity_selector.dart';
 import 'package:eatbytes/models/cart_item.dart';
 import 'package:flutter/material.dart';
-import 'package:fooddelivtute/models/cart_item.dart';
+// import 'package:fooddelivtute/models/cart_item.dart';
+// import 'cart_i'
 import 'package:provider/provider.dart';
 
 class MyCartTile extends StatelessWidget{
