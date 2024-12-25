@@ -1,7 +1,4 @@
 import 'package:eatbytes/models/cart_item.dart';
-<<<<<<< HEAD
-import 'package:intl/intl.dart';
-=======
 import 'package:flutter/material.dart';
 import 'food.dart';
 
@@ -104,7 +101,6 @@ class Restaurant extends ChangeNotifier {
 
 
 
->>>>>>> 172fec03f2c0d63212bdef3cb8fa01dbec79f5e8
 
 // JANNAH PUNYA
 

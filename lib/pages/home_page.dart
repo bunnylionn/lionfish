@@ -125,10 +125,8 @@ class _HomePageState extends State<HomePage>
           builder:(context, restaurant, child) => TabBarView(
             controller: _tabController,
             children: getFoodInThisCategory(restaurant.menu),
-            )
-          ),
->>>>>>> 172fec03f2c0d63212bdef3cb8fa01dbec79f5e8
-      ),
+          )
+        ),
     );
   }
 } 

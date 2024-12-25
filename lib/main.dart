@@ -1,9 +1,8 @@
+import 'package:eatbytes/auth/login_or_register.dart';
 import 'package:flutter/material.dart';
-import 'pa'
 import 'package:provider/provider.dart';
 import 'themes/theme_provider.dart';
 import 'package:eatbytes/themes/theme_provider.dart';
-
 import 'models/restaurant.dart';
 
 void main() {
@@ -31,8 +30,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner : false,
-      home: const LoginOrRegister(),
-      theme: Provider.of<ThemeProvider>(context).themeData,        // This is the theme of your application.
+      home: const LoginOrRegister(onTap: () {  },),
+      theme: Provider.of<ThemeProvider>(context).themedata,        // This is the theme of your application.
       );
   }
 }
