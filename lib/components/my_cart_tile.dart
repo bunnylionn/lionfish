@@ -1,9 +1,8 @@
 import 'package:eatbytes/components/my_quantity_selector.dart';
 import 'package:eatbytes/models/cart_item.dart';
-import 'package:flutter/material.dart';
-// import 'package:fooddelivtute/models/cart_item.dart';
-// import 'cart_i'
+import 'package:flutter/material.dart'; 
 import 'package:provider/provider.dart';
+import 'restaurant.dart';
 
 class MyCartTile extends StatelessWidget{
   final CartItem cartItem;
@@ -70,8 +69,8 @@ class MyCartTile extends StatelessWidget{
                         cartItem.selectedAddons
                       );
                     },
-                  )
-                ],
+                  ),
+                ]
               ),
             ),
 
@@ -113,7 +112,7 @@ class MyCartTile extends StatelessWidget{
             ),
           ],
         ),
-      )
+      ),
     );
   }
 }

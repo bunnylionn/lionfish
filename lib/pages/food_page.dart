@@ -1,5 +1,7 @@
 import 'package:eatbytes/models/restaurant.dart';
 import 'package:flutter/material.dart';
+import 'cart_page.dart';
+
 import 'package:fooddelive/models/food.dart'; // kena tgk based on amalin punya 
 
 class FoodPage extends StatefulWidget{
